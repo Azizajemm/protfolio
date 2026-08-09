@@ -187,7 +187,7 @@
         }
         .photo-stack { position: relative; width: clamp(200px, 24vw, 300px); aspect-ratio: 3/4; filter: drop-shadow(0 30px 45px rgba(255, 165, 0, 0.16)) drop-shadow(0 20px 35px rgba(0, 0, 0, 0.5)); }
         .sp-front-wrap {
-            position: absolute; inset: 0; z-index: 2; overflow: visible; border-radius: 18px;
+            position: absolute; inset: 0; z-index: 2; overflow: hidden; border-radius: 18px;
             background: rgba(18, 21, 28, 0.55); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
             box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 20px 60px rgba(0, 0, 0, 0.5);
             animation: frontFloat 5s ease-in-out infinite;
@@ -203,8 +203,8 @@
             border-radius: 18px; border: 1px solid #1e293b; display: block;
         }
         .sp-front {
-            position: absolute; top: -32%; left: 0; width: 100%; height: 172%;
-            object-fit: cover; object-position: 50% 6%; border-radius: 18px;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; object-position: center 20%; border-radius: 18px;
             filter: drop-shadow(0 0 18px rgba(255, 165, 0, 0.35));
         }
         .photo-sheen {
@@ -234,17 +234,8 @@
             letter-spacing: 5px; text-transform: uppercase; white-space: nowrap;
         }
         .photo-sidebar .side-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 12px rgba(255, 138, 0, 0.8); }
-        .hero-badge {
-            position: absolute; z-index: 1; top: -26px; left: -58px;
-            width: clamp(120px, 13vw, 165px); height: clamp(120px, 13vw, 165px);
-            opacity: 1; pointer-events: none;
-            filter: drop-shadow(0 0 18px rgba(255, 138, 0, 0.25));
-        }
-        .hero-badge svg { width: 100%; height: 100%; animation: badgeSpin 16s linear infinite; }
-        .hero-badge .ring-path { font-size: 8.4px; letter-spacing: 2.8px; font-weight: 700; text-transform: uppercase; fill: rgba(232, 237, 244, 0.82); }
-        .hero-badge .badge-core { text-anchor: middle; font-weight: 900; fill: var(--orange); font-size: 15px; }
-        @keyframes badgeSpin { to { transform: rotate(360deg); } }
-        @media (max-width: 968px) {
+        .photo-stack { width: min(64vw, 230px); }
+                                        @media (max-width: 968px) {
             .photo-stack { width: min(48vw, 250px); margin-top: 30px; }
             .open-chip { top: -12px; right: 4px; }
             .photo-sidebar { display: none; }
@@ -475,8 +466,7 @@
             .hero { padding-top: 110px; gap: 42px; }
             .hero h1 { font-size: clamp(2.15rem, 9vw, 2.6rem); }
             .hero .open-chip { top: -12px; }
-            .hero-badge { display: none; }
-            .photo-stack { width: min(64vw, 230px); }
+                .photo-stack { width: min(64vw, 230px); }
             .typed-line { font-size: 0.95rem; }
             .project-plate { gap: 22px; }
             .services-grid { gap: 18px; }
@@ -538,13 +528,6 @@
 
         <div class="hero-visual" id="hero-visual" data-aos="fade-left">
             <div class="open-chip"><span class="dot"></span> AVAILABLE FOR PROJECTS</div>
-            <div class="hero-badge" aria-hidden="true">
-                <svg viewBox="0 0 120 120">
-                    <defs><path id="ringpath" d="M 60,60 m -47,0 a 47,47 0 1,1 94,0 a 47,47 0 1,1 -94,0"></path></defs>
-                    <text class="ring-path"><textPath href="#ringpath" lengthAdjust="spacingAndGlyphs">AZIZ AJEMMAA ✦ BRAND DESIGNER ✦</textPath></text>
-                    <text x="60" y="65" class="badge-core">AZ</text>
-                </svg>
-            </div>
             <div class="photo-stack">
                 <div class="sp-front-wrap">
                     <img class="stack-photo sp-front" src="aziz.02.png" alt="Aziz Ajemmaa Profile">
