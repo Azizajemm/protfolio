@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>مباريات اليوم</title>
+  <meta name="description" content="تطبيق لعرض مباريات كرة القدم والنتائج المباشرة" />
+  <meta name="theme-color" content="#0b0f17" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/matches/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-ball" aria-hidden="true">⚽</span>
+      <div>
+        <h1>مباريات اليوم</h1>
+        <p class="sub" id="lastUpdate">جاري التحميل…</p>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="icon-btn" id="refreshBtn" title="تحديث" aria-label="تحديث">⟳</button>
+    </div>
+  </header>
+
+  <nav class="dates" id="dates" aria-label="اختيار اليوم"></nav>
+
+  <div class="toolbar">
+    <div class="leagues" id="leagues" role="tablist" aria-label="البطولات"></div>
+    <div class="filters">
+      <button class="chip" data-filter="all">الكل</button>
+      <button class="chip" data-filter="live"><span class="dot"></span> مباشر</button>
+      <button class="chip" data-filter="fav">★ المفضلة</button>
+      <input id="search" class="search" type="search" placeholder="ابحث عن فريق…" />
+    </div>
+  </div>
+
+  <div class="notice" id="notice" hidden></div>
+
+  <main id="content" class="content" aria-live="polite"></main>
+
+  <dialog id="matchDialog" class="dialog">
+    <div class="dialog-body" id="dialogBody"></div>
+    <form method="dialog"><button class="close-btn">إغلاق</button></form>
+  </dialog>
+
+  <footer class="foot">البيانات من ESPN · تحديث تلقائي كل 30 ثانية للمباريات المباشرة</footer>
+
+  <script src="/matches/app.js"></script>
+</body>
+</html>
